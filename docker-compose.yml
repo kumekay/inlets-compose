@@ -12,13 +12,13 @@ services:
     command:
       - "-server=true"
       - "-port=9000"
-      - "-token=[your token]"
+      - "-token=${INLETS_TOKEN}"
     ports:
       - "9000:9000"
     labels:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
-      - "traefik.frontend.rule=Host:[example.com]"
+      - "traefik.frontend.rule=Host:${INLETS_DOMAIN}"
       - "traefik.protocol=http"
       - "traefik.frontend.entryPoints=http,https"
       - "traefik.frontend.redirect.entryPoint=https"
