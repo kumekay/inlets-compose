@@ -13,8 +13,6 @@ services:
       - "server"
       - "--port=9000"
       - "--token=${INLETS_TOKEN}"
-    ports:
-      - "9000:9000"
     labels:
       - "traefik.docker.network=web"
       - "traefik.enable=true"
